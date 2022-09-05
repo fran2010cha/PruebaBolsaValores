@@ -3,7 +3,6 @@ package com.bolsavalores.backend.serviciorest.models.services;
 import java.util.List;
 
 import com.bolsavalores.backend.serviciorest.models.entity.Evento;
-import com.bolsavalores.backend.serviciorest.models.entity.InfoEvento;
 
 public interface IEventoService {
 	

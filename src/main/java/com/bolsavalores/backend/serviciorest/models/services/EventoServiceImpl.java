@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.bolsavalores.backend.serviciorest.models.dao.IEventoDao;
 import com.bolsavalores.backend.serviciorest.models.entity.Evento;
-import com.bolsavalores.backend.serviciorest.models.entity.InfoEvento;
 
 @Service
 public class EventoServiceImpl implements IEventoService  {

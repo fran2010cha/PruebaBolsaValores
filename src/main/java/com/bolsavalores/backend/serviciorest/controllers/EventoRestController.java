@@ -21,33 +21,33 @@ import com.bolsavalores.backend.serviciorest.models.services.IEventoService;
 
 @CrossOrigin(origins = {"http://localhost:4200"})
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/eventos")
 public class EventoRestController {
 	
 	@Autowired
 	private IEventoService eventoService;
 	
-	@GetMapping("/eventos")
+	@GetMapping("/all")
 	public List<Evento> index(){
 		return eventoService.findAll();
 	}
 	
-	@GetMapping("/eventos/{id}")
+	@GetMapping("/find/{id}")
 	public Evento show(@PathVariable Long id){
 		return eventoService.findById(id);
 	}
 	
-	@PostMapping("/eventos")
+	@PostMapping("/evento")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Evento create(@RequestBody Evento evento){
 		return eventoService.Save(evento);
 	}
 	
-	@GetMapping("/plataformas/{id}")
-	public  List<InfoEvento> showPlatafoms(@PathVariable Long id){
+	@GetMapping("/plataforma/{plataforma_id}")
+	public  List<InfoEvento> showPlatafoms(@PathVariable Long plataforma_id){
 		InfoEvento infoEvento; 
 		List<InfoEvento> ListinfoEvento= new ArrayList<>();
-		for(Evento evento : eventoService.findByPlataform(id)) {
+		for(Evento evento : eventoService.findByPlataform(plataforma_id)) {
 			infoEvento = new InfoEvento();
 			infoEvento.setPlataforma_id(evento.getPlataforma().getId());
 			infoEvento.setNombre_plataforma(evento.getPlataforma().getNombre());

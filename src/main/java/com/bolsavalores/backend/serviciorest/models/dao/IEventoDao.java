@@ -6,7 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 
 import com.bolsavalores.backend.serviciorest.models.entity.Evento;
-import com.bolsavalores.backend.serviciorest.models.entity.InfoEvento;
 
 public interface IEventoDao extends CrudRepository<Evento, Long>{
 	
