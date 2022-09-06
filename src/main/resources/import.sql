@@ -8,3 +8,5 @@ INSERT INTO evento (id_evento,cantidad_veces,descripcion, fecha_evento, valor_un
 INSERT INTO evento (id_evento,cantidad_veces,descripcion, fecha_evento, valor_unitario, plataforma_id) VALUES ( 3,3, 'Generación de reportes operativos', '2022-09-01',55.9, 2);
 INSERT INTO evento (id_evento,cantidad_veces,descripcion, fecha_evento, valor_unitario, plataforma_id) VALUES ( 4,4, 'Custodia de titulo valor', '2022-09-01', 100, 3);
 INSERT INTO evento (id_evento,cantidad_veces,descripcion, fecha_evento, valor_unitario, plataforma_id) VALUES ( 5,4, 'Complementación de operacion', '2022-08-30', 32, 4);
+
+CREATE TRIGGER heroku_f2be0f1ab2eedb1.trigger_costos  AFTER INSERT ON heroku_f2be0f1ab2eedb1.evento FOR EACH ROW  insert into heroku_f2be0f1ab2eedb1.costo (id_evento,plataforma_id,costo) values (NEW.id_evento,new.plataforma_id,NEW.cantidad_veces*NEW.valor_unitario);
