@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bolsavalores.backend.serviciorest.models.entity.Plataforma;
 import com.bolsavalores.backend.serviciorest.models.services.IPlataformaService;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://prueba-bolsa-valores.web.app"})
 @RestController
 @RequestMapping("/plataformas")
 public class PlataformaRestController {

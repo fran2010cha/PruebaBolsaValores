@@ -19,7 +19,7 @@ import com.bolsavalores.backend.serviciorest.models.entity.Evento;
 import com.bolsavalores.backend.serviciorest.models.entity.InfoEvento;
 import com.bolsavalores.backend.serviciorest.models.services.IEventoService;
 
-@CrossOrigin(origins = {"http://localhost:4200"})
+@CrossOrigin(origins = {"https://prueba-bolsa-valores.web.app"})
 @RestController
 @RequestMapping("/eventos")
 public class EventoRestController {
